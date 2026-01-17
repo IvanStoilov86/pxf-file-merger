@@ -447,7 +447,7 @@ namespace PXF_file_merger
 																Console.Write("Total glyphs: ");
 				Console.ForegroundColor=ConsoleColor.Yellow;	Console.WriteLine(num_glyphs);
 				Console.ForegroundColor=ConsoleColor.White;		Console.WriteLine("    of which:");
-																Console.Write("        Total overlapping glyphs: ");
+																Console.Write("        Overlapping glyphs: ");
 				Console.ForegroundColor=ConsoleColor.Yellow;	Console.WriteLine(existing_glyphs);
 				Console.ForegroundColor=ConsoleColor.White;		Console.Write("        Added glyphs: ");
 				Console.ForegroundColor=ConsoleColor.Yellow;	Console.Write(added_glyphs1);
