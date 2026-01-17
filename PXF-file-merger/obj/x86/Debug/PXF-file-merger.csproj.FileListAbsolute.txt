@@ -1,0 +1,5 @@
+c:\users\lenovo\documents\visual studio 2010\Projects\PXF-file-merger\PXF-file-merger\bin\Debug\PXF-file-merger.exe
+c:\users\lenovo\documents\visual studio 2010\Projects\PXF-file-merger\PXF-file-merger\bin\Debug\PXF-file-merger.pdb
+c:\users\lenovo\documents\visual studio 2010\Projects\PXF-file-merger\PXF-file-merger\obj\x86\Debug\PXF-file-merger.exe
+c:\users\lenovo\documents\visual studio 2010\Projects\PXF-file-merger\PXF-file-merger\obj\x86\Debug\PXF-file-merger.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2010\Projects\PXF-file-merger\PXF-file-merger\obj\x86\Debug\PXF-file-merger.csprojResolveAssemblyReference.cache
