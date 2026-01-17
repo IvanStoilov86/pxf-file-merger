@@ -336,7 +336,7 @@ namespace PXF_file_merger
 								bookmark_chars[counter]= !bookmark_chars[counter]; // complement
 								if(bookmark_chars[counter]){num_bookmarks++;}else{num_bookmarks--;}
 							}
-							if(cmd_input=="Enter"){ differences++; file3_log_differences.Add(counter);
+							if(cmd_input=="Enter"){
 								Console.Clear();
 								if(currentchar==0){
 									if(glyphprompt_currentSelection==0){
@@ -352,6 +352,8 @@ namespace PXF_file_merger
 										glyphpromptselections_display[1]= "1";
 									} else
 									if(glyphprompt_currentSelection==3){
+										differences++; file3_log_differences.Add(counter);
+
 										glyphpromptselections[2]= file1work[c1+3]+"\n";
 										glyphpromptselections_display[2]= "1";
 										
@@ -381,6 +383,8 @@ namespace PXF_file_merger
 										glyphpromptselections_display[1]= "2";
 									} else
 									if(glyphprompt_currentSelection==3){
+										differences++; file3_log_differences.Add(counter);
+										
 										glyphpromptselections[2]= file2work[c2+3]+"\n";
 										
 										file3_data+=glyphpromptselections[0]+glyphpromptselections[1]+glyphpromptselections[2]+glyphpromptselections[3];
@@ -451,7 +455,7 @@ namespace PXF_file_merger
 				Console.ForegroundColor=ConsoleColor.Yellow;	Console.Write(added_glyphs2);
 				Console.ForegroundColor=ConsoleColor.White;		Console.Write(" = ");
 				Console.ForegroundColor=ConsoleColor.Yellow;	Console.WriteLine((added_glyphs1+added_glyphs2));
-				Console.ForegroundColor=ConsoleColor.White;		Console.Write("        Differences: ");
+				Console.ForegroundColor=ConsoleColor.White;		Console.Write("        Different glyphs: ");
 				Console.ForegroundColor=ConsoleColor.Yellow;	Console.WriteLine(differences);
 				
 				Console.ForegroundColor=ConsoleColor.White;		Console.Write("\nYou bookmarked ");
