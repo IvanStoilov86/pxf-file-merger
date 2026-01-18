@@ -16,7 +16,7 @@ namespace PXF_file_merger
 			Console.Clear();
 
 			Console.WriteLine("PixelForge .PXF font file merger\n      (c)2026 Ivan Stoilov");
-			Console.WriteLine(                                  "********************************\n\nIf a glyph exists in only one of the two files, it will be automatically added to the final file.\nUse invalid input to reset file choices.\n\n");
+			Console.WriteLine(                                  "********************************\n\nIf a glyph exists in only one of the two files, it will be automatically added to the final file.\nUse invalid input to reset file choices and update file list.\n\n");
 
 			string dirPath= (Directory.GetCurrentDirectory()).ToString()+"\\files"; // set work path
 
