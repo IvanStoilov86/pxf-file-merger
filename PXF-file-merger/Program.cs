@@ -11,6 +11,8 @@ namespace PXF_file_merger
 
 		static void Main(string[] args){ Console.SetBufferSize(600,600);
 			begin:
+			Console.CursorVisible= true;
+
 			Console.BackgroundColor= ConsoleColor.Black;
 			Console.ForegroundColor= ConsoleColor.White;
 			Console.Clear();
@@ -451,8 +453,11 @@ namespace PXF_file_merger
 			string file3= file3_header+file3_glyphcount_start+num_glyphs+file3_glyphcount_end+file3_data;
 			string file3_log= "";
 
+			
 
 			for(;;){
+				Console.CursorVisible= false;
+
 				Console.Clear();
 				Console.WriteLine("Glyphs OK.\n");
 
@@ -496,6 +501,7 @@ namespace PXF_file_merger
 					Console.WriteLine("\n\n\nCopied to clipboard.\nPress any key to continue..."); Console.ReadKey();
 				}else
 				if(cmd_input=="w"){
+					Console.CursorVisible= true;
 					Console.WriteLine("\n\n\nFilename of merged file (without \".pxf\"):");
 					string file3filename= Console.ReadLine();
 					Console.SetCursorPosition(file3filename.Length,Console.CursorTop-1);
