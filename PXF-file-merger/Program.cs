@@ -94,13 +94,14 @@ namespace PXF_file_merger
 					Console.WriteLine();
 					
 					Console.BackgroundColor=ConsoleColor.Black; Console.ForegroundColor=ConsoleColor.White;
-					Console.WriteLine("Press \"1\" or \"2\" to select a line to save as part of the final file:");
+					Console.WriteLine("Press 1 or 2 to select a line for the final file (0 to abort):");
 					{
 					string cmd_input="";
-					for(;(cmd_input!="1" && cmd_input!="2");){
+					for(;(cmd_input!="1" && cmd_input!="2") && cmd_input!="0";){
 					cmd_input= Console.ReadKey(true).KeyChar.ToString();
 					}
-					if(cmd_input=="1"){file3_header+=file1work[c]+"\n";}else{file3_header+=file2work[c]+"\n";}
+					if(cmd_input=="1"){file3_header+=file1work[c]+"\n";}else
+					if(cmd_input=="0"){goto begin;}else{file3_header+=file2work[c]+"\n";}
 					Console.WriteLine(cmd_input+" - OK\n");
 					}
 				}else{file3_header+=file1work[c]+"\n";}
@@ -307,7 +308,7 @@ namespace PXF_file_merger
 
 							
 							Console.ForegroundColor=ConsoleColor.DarkGray;
-							Console.WriteLine("\n<- and -> - navigate diffs, Enter - keep selected property, B/F - toggle bookmark.\n1-9 - stretch preview horizontally. (Stretch = "+preview_horizstretch+")");
+							Console.Write("\n<- and -> - nav diffs, Enter - keep selected property, B/F - toggle bookmark\n1-9 - stretch preview horizontally (Stretch = "+preview_horizstretch+")\nEsc - abort and reset program");
 							Console.ForegroundColor=ConsoleColor.White;
 							
 
@@ -332,6 +333,17 @@ namespace PXF_file_merger
 							for(ushort c=1;c<10;c++){if(cmd_input=="D"+c){preview_horizstretch=c; break;}}
 							if(cmd_input=="LeftArrow"){if(currentchar>0){currentchar--;}}
 							if(cmd_input=="RightArrow"){if(currentchar<1){currentchar++;}}
+							if(cmd_input=="Escape"){
+								Console.BackgroundColor=ConsoleColor.White;
+								Console.ForegroundColor=ConsoleColor.Black;		Console.Write("Really abort and reset? Y/N");
+
+								for(string cmd_input1="";cmd_input1!= "y" && cmd_input1!="n";){
+								cmd_input1= Console.ReadKey(true).KeyChar.ToString().ToLower();
+								if(cmd_input1=="y"){goto begin;}
+								}
+								Console.BackgroundColor=ConsoleColor.Black;
+								Console.ForegroundColor=ConsoleColor.White;
+							}
 							if(cmd_input=="B" || cmd_input=="F"){
 								bookmark_chars[counter]= !bookmark_chars[counter]; // complement
 								if(bookmark_chars[counter]){num_bookmarks++;}else{num_bookmarks--;}
